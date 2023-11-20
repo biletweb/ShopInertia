@@ -19,7 +19,7 @@
                             </div>
                         </li>
                     </ul>
-                        <a class="nav-item nav-link" href="javascript:void(0)">АДМИН ПАНЕЛЬ</a>
+                        <Link class="nav-item nav-link" :href="route('admin.index')">АДМИН ПАНЕЛЬ</Link>
                     </div>
                 <ul class="navbar-nav ms-lg-auto">
                     <li class="nav-item">
@@ -41,8 +41,12 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/vue3';
+
 export default {
-    
+    components: {
+        Link
+    }
 }
 </script>
 

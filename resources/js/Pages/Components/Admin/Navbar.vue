@@ -21,7 +21,7 @@
                 </div>
                 <ul class="navbar-nav ms-lg-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Вернуться в магазин</a>
+                        <Link class="nav-link" :href="route('shop.index')">Вернуться в магазин</Link>
                     </li>
                 </ul>
             </div>
@@ -30,8 +30,12 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/vue3';
+
 export default {
-    
+    components: {
+        Link
+    }
 }
 </script>
 
