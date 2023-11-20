@@ -13,16 +13,18 @@
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Created</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(user, key) in users.data" :key="user.id">
+                <tr v-for="user in users.data">
                     <td>{{ user.name }}</td>
                     <td>{{ user.email }}</td>
+                    <td>{{ user.formatted_created_at }}</td>
                     <td>
                         <button type="button" class="btn btn-xs btn-success rounded-3 me-2">Edit</button>
-                        <button @click="destroy(user.id, user.name)" type="button" class="btn btn-xs btn-danger rounded-3">Delete</button>
+                        <button @click="destroy(user.id)" type="button" class="btn btn-xs btn-danger rounded-3">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -49,11 +51,11 @@ export default {
         users: Object
     },
     methods: {
-        destroy(id, name) {
-            if (confirm(`Are you sure you want to delete this user '${name}'?`)) {
+        destroy(id) {
+            if (confirm('Are you sure you want to delete this user?')) {
                 this.$inertia.delete(this.route('users.destroy', id))
             }
-        }
+        },
     },
     layout: MainLayout
 }

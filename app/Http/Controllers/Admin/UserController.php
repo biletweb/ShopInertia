@@ -11,7 +11,7 @@ class UserController extends Controller
     public function index()
     {
         $title = "Users";
-        $users = User::paginate(10);
+        $users = User::orderByDesc('created_at')->paginate(10);
         return inertia('Admin/Users', compact('title', 'users'));
     }
 

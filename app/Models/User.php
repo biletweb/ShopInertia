@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -42,4 +43,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Передача в компоненты inertia в нужном формате
+    // Используется для добавления в JSON-представление модели атрибута formatted_created_at, 
+    // который представляет собой отформатированную версию created_at
+    protected $appends = ['formatted_created_at'];
+
+    public function getFormattedCreatedAtAttribute()
+    {
+        // return Carbon::parse($this->attributes['created_at'])->format('Y.m.d H:i:s');
+        return Carbon::parse($this->attributes['created_at'])->diffForHumans();
+    }
 }
