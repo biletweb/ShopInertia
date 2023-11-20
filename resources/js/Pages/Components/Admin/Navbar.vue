@@ -10,18 +10,18 @@
                 <div class="navbar-nav me-auto">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Меню</a>
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Menu</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0)">Пользователи</a>
-                                <a class="dropdown-item" href="javascript:void(0)">Меню 2</a>
-                                <a class="dropdown-item" href="javascript:void(0)">Меню 3</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Users</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Menu 2</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Menu 3</a>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <ul class="navbar-nav ms-lg-auto">
                     <li class="nav-item">
-                        <Link class="nav-link" :href="route('shop.index')">Вернуться в магазин</Link>
+                        <Link class="nav-link" :href="route('shop.index')">Return to store</Link>
                     </li>
                 </ul>
             </div>

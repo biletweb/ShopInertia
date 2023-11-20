@@ -5,7 +5,7 @@
                 <span class="footer-text fw-bold link-light">{{ $page.props.appName }}</span> <span class="link-light">© {{ currentYear }}</span>
             </div>
             <div>
-                <span class="footer-link fw-bold link-light">Версия {{ $page.props.appVersion }}</span>
+                <span class="footer-link fw-bold link-light">Version {{ $page.props.appVersion }}</span>
             </div>
         </div>
     </footer>

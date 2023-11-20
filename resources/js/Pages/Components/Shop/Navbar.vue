@@ -11,28 +11,28 @@
                 <div class="navbar-nav me-auto">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Категории</a>
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Categories</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0)">Категория 1</a>
-                                <a class="dropdown-item" href="javascript:void(0)">Категория 2</a>
-                                <a class="dropdown-item" href="javascript:void(0)">Категория 3</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Category 1</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Category 2</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Category 3</a>
                             </div>
                         </li>
                     </ul>
-                        <Link class="nav-item nav-link" :href="route('admin.index')">АДМИН ПАНЕЛЬ</Link>
+                        <Link class="nav-item nav-link" :href="route('admin.index')">ADMIN PANEL</Link>
                     </div>
                 <ul class="navbar-nav ms-lg-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)"><i class="tf-icons navbar-icon bx bx-cart-alt"></i>
-                            Корзина</a>
+                            Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)"><i class="tf-icons navbar-icon bx bx-user"></i>
-                            Профиль</a>
+                            Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)"><i
-                                class="tf-icons navbar-icon bx bx-lock-open-alt"></i> Выйти</a>
+                                class="tf-icons navbar-icon bx bx-lock-open-alt"></i> Go out</a>
                     </li>
                 </ul>
             </div>

@@ -5,8 +5,8 @@
                 <a href="javascript:void(0)" class="footer-text fw-bold">{{ $page.props.appName }}</a> © {{ currentYear }}
             </div>
             <div>
-                <a href="javascript:void(0)" class="footer-link me-4">Контакты</a>
-                <a href="javascript:void(0)" class="footer-link">Доставка</a>
+                <a href="javascript:void(0)" class="footer-link me-4">Contacts</a>
+                <a href="javascript:void(0)" class="footer-link">Delivery</a>
             </div>
         </div>
     </footer>
