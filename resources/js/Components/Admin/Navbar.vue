@@ -12,9 +12,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Menu</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0)">Users</a>
-                                <a class="dropdown-item" href="javascript:void(0)">Menu 2</a>
-                                <a class="dropdown-item" href="javascript:void(0)">Menu 3</a>
+                                <Link class="dropdown-item" :href="route('users.index')">Users</Link>
                             </div>
                         </li>
                     </ul>
