@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import MainLayout from '../Layouts/Shop/MainLayout.vue';
+import MainLayout from '../../Layouts/Shop/MainLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
 export default {
