@@ -22,7 +22,7 @@
                     <td>{{ user.email }}</td>
                     <td>
                         <button type="button" class="btn btn-xs btn-success rounded-3 me-2">Edit</button>
-                        <button type="button" class="btn btn-xs btn-danger rounded-3">Delete</button>
+                        <button @click="destroy(user.id, user.name)" type="button" class="btn btn-xs btn-danger rounded-3">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -47,6 +47,13 @@ export default {
     props: {
         title: String,
         users: Object
+    },
+    methods: {
+        destroy(id, name) {
+            if (confirm(`Are you sure you want to delete this user '${name}'?`)) {
+                this.$inertia.delete(this.route('users.destroy', id))
+            }
+        }
     },
     layout: MainLayout
 }
