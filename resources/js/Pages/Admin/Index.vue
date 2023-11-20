@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Admin index</h1>
+        Admin Index Content
     </div>
 </template>
 
