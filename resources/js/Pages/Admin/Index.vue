@@ -1,5 +1,7 @@
 <template>
-    <Head :title="title" />
+    <Head>
+        <title>{{ title }}</title>
+    </Head>
     <div>
         Admin Index Content
     </div>

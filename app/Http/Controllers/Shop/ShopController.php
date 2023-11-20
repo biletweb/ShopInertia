@@ -9,7 +9,7 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $title = "Shop index";
+        $title = env('APP_NAME') . "- интернет магазин";
         return inertia('Shop/Index', compact('title'));
     }
 }

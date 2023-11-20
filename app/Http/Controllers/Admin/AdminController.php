@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $title = "Admin index";
+        $title = "ADMIN PANEL";
         return inertia('Admin/Index', compact('title'));
     }
 }
