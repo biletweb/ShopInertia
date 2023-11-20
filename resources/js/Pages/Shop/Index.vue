@@ -1,6 +1,6 @@
 <template>
     <Head>
-        <title>{{ title }}</title>
+        <title>{{ title }} - интернет магазин</title>
     </Head>
 
     Shop Index Content
