@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded-3 my-2">
         <div class="container-fluid">
-            <img src="../img/logo/logo.jpg" style="max-height: 35px; opacity: .8" class="me-3" alt="logo">
+            <img src="../../img/logo/logo.jpg" style="max-height: 35px; opacity: .8" class="me-3" alt="logo">
             <a class="navbar-brand" href="javascript:void(0)">biletweb.store</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-ex-7">
                 <span class="navbar-toggler-icon"></span>
