@@ -33,7 +33,11 @@
                 </div>
                 <div class="d-flex justify-content-end">
                     <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2">Back</Link>
-                    <button type="submit" class="btn btn-sm btn-outline-secondary">Save</button>
+                    <button type="submit" :class="{ 'btn d-none': form.processing }" class="btn btn-sm btn-outline-secondary">Save</button>
+                    <button v-if="form.processing" class="btn btn-sm btn-outline-secondary" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span class="visually-hidden">Loading...</span>
+                    </button>
                 </div>
             </div>
         </div>
