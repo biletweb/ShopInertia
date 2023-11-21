@@ -20,6 +20,24 @@
                         {{ form.errors.email }}
                     </div>
                 </div>
+                <div class="mb-3">
+                    <label for="current_password" class="form-label">Current password</label>
+                    <input v-model="form.current_password" type="password" name="current_password" class="form-control" :class="{ 'is-invalid': form.errors.current_password }" id="current_password" placeholder="Enter password" />
+                    <div v-if="form.errors.current_password" class="invalid-feedback">
+                        {{ form.errors.current_password }}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">New password</label>
+                    <input v-model="form.password" type="password" name="password" class="form-control" :class="{ 'is-invalid': form.errors.password }" id="password" placeholder="Enter password" />
+                    <div v-if="form.errors.password" class="invalid-feedback">
+                        {{ form.errors.password }}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password_confirmation" class="form-label">Confirm password</label>
+                    <input v-model="form.password_confirmation" type="password" name="password_confirmation" class="form-control" :class="{ 'is-invalid': form.errors.password }" id="password_confirmation" placeholder="Enter password" />
+                </div>
                 <div class="d-flex justify-content-end">
                     <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2">Back</Link>
                     <button type="submit" class="btn btn-sm btn-outline-success">Update</button>
@@ -45,7 +63,10 @@ export default {
     setup(props) {
         const form = useForm({
             name: props.user.name,
-            email: props.user.email
+            email: props.user.email,
+            current_password: null,
+            password: null,
+            password_confirmation: null
         });
 
         function update() {
