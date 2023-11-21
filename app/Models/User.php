@@ -3,11 +3,11 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -45,7 +45,7 @@ class User extends Authenticatable
     ];
 
     // Передача в компоненты inertia в нужном формате
-    // Используется для добавления в JSON-представление модели атрибута formatted_created_at, 
+    // Используется для добавления в JSON-представление модели атрибута formatted_created_at,
     // который представляет собой отформатированную версию created_at
     protected $appends = ['formatted_created_at'];
 

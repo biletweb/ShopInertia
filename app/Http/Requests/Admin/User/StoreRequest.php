@@ -23,8 +23,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|email|unique:users,email,except,id',
-            'password' => 'required|min:4|confirmed'
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:4|confirmed',
         ];
     }
 }

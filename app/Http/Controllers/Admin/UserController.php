@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\User\StoreRequest;
 use App\Http\Requests\Admin\User\UpdateRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -14,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         // Устанавливаем заголовок страницы.
-        $title = "Users";
+        $title = 'Users';
 
         // Получаем список пользователей, сортированный по убыванию даты создания и разбитый на страницы.
         $users = User::orderByDesc('created_at')->paginate(10);
@@ -26,7 +25,7 @@ class UserController extends Controller
     public function create()
     {
         // Устанавливаем заголовок страницы.
-        $title = "Create user";
+        $title = 'Create user';
 
         // Возвращаем представление Inertia.js с передачей данных о заголовке.
         return inertia('Admin/Users/Create', compact('title'));
@@ -58,7 +57,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         // Устанавливаем заголовок страницы.
-        $title = "Edit user";
+        $title = 'Edit user';
 
         // Возвращаем представление Inertia.js с передачей данных о заголовке и объекте пользователя.
         return inertia('Admin/Users/Edit', compact('title', 'user'));
@@ -71,7 +70,7 @@ class UserController extends Controller
 
         // Проверяем, если в запросе есть текущий пароль, и если есть, проверяем его корректность.
         if ($request->current_password) {
-            if (!Hash::check($request->current_password, $user->password)) {
+            if (! Hash::check($request->current_password, $user->password)) {
                 // Если текущий пароль неверен, возвращаем пользователя с ошибкой.
                 return back()->withErrors(['current_password' => 'The current password is incorrect.']);
             }
