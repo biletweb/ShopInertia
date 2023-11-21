@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary rounded-3 mt-2 mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="javascript:void(0)">ADMIN PANEL</a>
+            <Link class="navbar-brand" :href="route('admin.index')">ADMIN PANEL</Link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-ex-7">
                 <span class="navbar-toggler-icon"></span>
             </button>
