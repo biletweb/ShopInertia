@@ -39,6 +39,7 @@
                     <input v-model="form.password_confirmation" type="password" name="password_confirmation" class="form-control" :class="{ 'is-invalid': form.errors.password }" id="password_confirmation" placeholder="Enter password" />
                 </div>
                 <div class="d-flex justify-content-end">
+                    <div v-if="form.isDirty" class="flex-grow-1 fw-bold text-warning">Changed, do not forget to save</div>
                     <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2">Back</Link>
                     <button type="submit" :class="{ 'btn d-none': form.processing }" class="btn btn-sm btn-outline-success">Update</button>
                     <button v-if="form.processing" class="btn btn-sm btn-outline-success" type="button" disabled>
