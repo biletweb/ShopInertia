@@ -23,7 +23,7 @@
                     <td>{{ user.email }}</td>
                     <td>{{ user.formatted_created_at }}</td>
                     <td>
-                        <a role="button" class="btn btn-xs btn-outline-success rounded-1 me-2">Edit</a>
+                        <Link :href="route('users.edit', user.id)" role="button" class="btn btn-xs btn-outline-success rounded-1 me-2">Edit</Link>
                         <a @click="destroy(user.id)" role="button" class="btn btn-xs btn-outline-danger rounded-1">Delete</a>
                     </td>
                 </tr>

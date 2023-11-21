@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\User\StoreRequest;
+use App\Http\Requests\Admin\User\UpdateRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -21,12 +23,11 @@ class UserController extends Controller
         return inertia('Admin/Users/Create', compact('title'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+        $data = $request->validated();
+        User::create($data);
+        return redirect()->route('users.index');
     }
 
     /**
@@ -37,20 +38,17 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(User $user)
     {
-        //
+        $title = "Edit user";
+        return inertia('Admin/Users/Edit', compact('title', 'user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, User $user)
+    public function update(UpdateRequest $request, User $user)
     {
-        //
+        $data = $request->validated();
+        $user->update($data);
+        return redirect()->route('users.index');
     }
 
     public function destroy(User $user)

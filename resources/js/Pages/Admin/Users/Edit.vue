@@ -3,7 +3,7 @@
         <title>{{ title }}</title>
     </Head>
 
-    <form @submit.prevent="store">
+    <form @submit.prevent="update">
         <div class="card">
             <div class="card-body">
                 <div class="mb-3">
@@ -20,23 +20,9 @@
                         {{ form.errors.email }}
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input v-model="form.password" type="password" name="password" class="form-control" :class="{ 'is-invalid': form.errors.password }" id="password" placeholder="Enter password" />
-                    <div v-if="form.errors.password" class="invalid-feedback">
-                        {{ form.errors.password }}
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="password_confirmation" class="form-label">Confirm password</label>
-                    <input v-model="form.password_confirmation" type="password" name="password_confirmation" class="form-control" :class="{ 'is-invalid': form.errors.password }" id="confirm_password" placeholder="Enter password" />
-                    <!-- <div v-if="form.errors.password" class="invalid-feedback">
-                        Error
-                    </div> -->
-                </div>
                 <div class="d-flex justify-content-end">
                     <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2">Back</Link>
-                    <button type="submit" class="btn btn-sm btn-outline-secondary">Save</button>
+                    <button type="submit" class="btn btn-sm btn-outline-success">Update</button>
                 </div>
             </div>
         </div>
@@ -54,20 +40,19 @@ export default {
     },
     props: {
         title: String,
+        user: Object
     },
-    setup() {
+    setup(props) {
         const form = useForm({
-            name: null,
-            email: null,
-            password: null,
-            password_confirmation: null
+            name: props.user.name,
+            email: props.user.email
         });
 
-        function store() {
-            form.post(route('users.store'))
+        function update() {
+            form.put(route('users.update', props.user.id))
         }
 
-        return { form, store }
+        return { form, update }
     },
     layout: MainLayout
 }
