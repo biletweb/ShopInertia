@@ -40,6 +40,9 @@ class UserController extends Controller
         // Создаем нового пользователя в базе данных, используя полученные данные.
         User::create($data);
 
+        // Создаем уведомление об успешном выполнении
+        session()->flash('message', 'User created');
+
         // Перенаправляем пользователя на страницу списка пользователей.
         return redirect()->route('users.index');
     }
@@ -92,6 +95,9 @@ class UserController extends Controller
         // Обновляем остальные данные пользователя в базе данных.
         $user->update($data);
 
+        // Создаем уведомление об успешном выполнении
+        session()->flash('message', 'User updated');
+
         // Перенаправляем пользователя на страницу списка пользователей.
         return redirect()->route('users.index');
     }
@@ -100,6 +106,9 @@ class UserController extends Controller
     {
         // Удаляем пользователя из базы данных.
         $user->delete();
+
+        // Создаем уведомление об успешном выполнении
+        session()->flash('message', 'User deleted');
 
         // Перенаправляем пользователя назад (на предыдущую страницу).
         return redirect()->back();

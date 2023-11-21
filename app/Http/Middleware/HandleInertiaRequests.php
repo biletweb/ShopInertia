@@ -39,6 +39,7 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'appName' => env('APP_NAME'),
             'appVersion' => env('APP_VERSION'),
+            'message' => $request->session()->get('message'),
         ]);
     }
 }

@@ -9,6 +9,10 @@
         <Navbar />
 
         <div class="flex-grow-1">
+            <div v-if="$page.props.message" class="alert alert-success" role="alert">
+                {{ $page.props.message }}
+            </div>
+
             <slot />
         </div>
 
