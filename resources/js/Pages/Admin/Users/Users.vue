@@ -4,7 +4,7 @@
     </Head>
 
     <div class="d-flex justify-content-end mb-2">
-        <Link :href="route('users.create')" type="button" class="btn btn-sm btn-outline-secondary">Add user</Link>
+        <Link :href="route('users.create')" type="button" class="btn btn-sm btn-outline-secondary">Create user</Link>
     </div>
 
     <div v-if="users.total > 0" class="table-responsive">

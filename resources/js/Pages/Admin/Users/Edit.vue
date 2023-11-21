@@ -8,14 +8,14 @@
             <div class="card-body">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input v-model="form.name" type="text" name="name" class="form-control" :class="{ 'is-invalid': form.errors.name }" id="name" placeholder="Enter your name" />
+                    <input v-model="form.name" type="text" name="name" class="form-control" :class="{ 'is-invalid': form.errors.name }" id="name" placeholder="Enter name" />
                     <div v-if="form.errors.name" class="invalid-feedback">
                         {{ form.errors.name }}
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input v-model="form.email" type="text" name="email" class="form-control" :class="{ 'is-invalid': form.errors.email }" id="email" placeholder="Enter your email" />
+                    <input v-model="form.email" type="text" name="email" class="form-control" :class="{ 'is-invalid': form.errors.email }" id="email" placeholder="Enter email" />
                     <div v-if="form.errors.email" class="invalid-feedback">
                         {{ form.errors.email }}
                     </div>
