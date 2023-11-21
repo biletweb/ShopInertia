@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded-3 my-2">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded-3 mt-2 mb-3">
         <div class="container-fluid">
             <img src="../../src/img/logo/logo.jpg" style="max-height: 35px; opacity: .8" class="me-3" alt="logo">
             <a class="navbar-brand" href="javascript:void(0)">{{ $page.props.appName }}</a>

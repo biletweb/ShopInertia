@@ -12,15 +12,13 @@ class UserController extends Controller
     {
         $title = "Users";
         $users = User::orderByDesc('created_at')->paginate(10);
-        return inertia('Admin/Users', compact('title', 'users'));
+        return inertia('Admin/Users/Users', compact('title', 'users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $title = "Create user";
+        return inertia('Admin/Users/Create', compact('title'));
     }
 
     /**

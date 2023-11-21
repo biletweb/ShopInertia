@@ -4,7 +4,7 @@
     </Head>
 
     <div class="d-flex justify-content-end mb-2">
-        <button type="button" class="btn btn-sm btn-outline-secondary">Add user</button>
+        <Link :href="route('users.create')" type="button" class="btn btn-sm btn-outline-secondary">Add user</Link>
     </div>
 
     <div v-if="users.total > 0" class="table-responsive">
@@ -23,8 +23,8 @@
                     <td>{{ user.email }}</td>
                     <td>{{ user.formatted_created_at }}</td>
                     <td>
-                        <button type="button" class="btn btn-xs btn-success rounded-3 me-2">Edit</button>
-                        <button @click="destroy(user.id)" type="button" class="btn btn-xs btn-danger rounded-3">Delete</button>
+                        <button type="button" class="btn btn-xs btn-secondary rounded-1 me-2">Edit</button>
+                        <button @click="destroy(user.id)" type="button" class="btn btn-xs btn-danger rounded-1">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -38,13 +38,13 @@
 </template>
 
 <script>
-import MainLayout from '../../Layouts/Admin/MainLayout.vue';
-import { Head } from '@inertiajs/vue3';
-import Pagination from '../../Components/Admin/Pagination.vue';
+import MainLayout from '../../../Layouts/Admin/MainLayout.vue';
+import { Head, Link } from '@inertiajs/vue3';
+import Pagination from '../../../Components/Admin/Pagination.vue';
 
 export default {
     components: {
-        Head, Pagination
+        Head, Pagination, Link
     },
     props: {
         title: String,
