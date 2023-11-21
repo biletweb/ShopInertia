@@ -23,8 +23,8 @@
                     <td>{{ user.email }}</td>
                     <td>{{ user.formatted_created_at }}</td>
                     <td>
-                        <button type="button" class="btn btn-xs btn-secondary rounded-1 me-2">Edit</button>
-                        <button @click="destroy(user.id)" type="button" class="btn btn-xs btn-danger rounded-1">Delete</button>
+                        <a type="button" class="btn btn-xs btn-outline-secondary rounded-1 me-2">Edit</a>
+                        <a @click="destroy(user.id)" type="button" class="btn btn-xs btn-outline-danger rounded-1">Delete</a>
                     </td>
                 </tr>
             </tbody>
