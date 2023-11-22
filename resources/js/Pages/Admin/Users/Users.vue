@@ -16,7 +16,7 @@
     </div>
 
     <div v-if="users.total > 0" class="table-responsive">
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Name</th>
