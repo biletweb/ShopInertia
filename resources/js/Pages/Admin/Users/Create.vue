@@ -32,9 +32,9 @@
                     <input v-model="form.password_confirmation" type="password" name="password_confirmation" class="form-control" :class="{ 'is-invalid': form.errors.password }" id="password_confirmation" placeholder="Enter password" />
                 </div>
                 <div class="d-flex justify-content-end">
-                    <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2">Back</Link>
-                    <button type="submit" :class="{ 'btn d-none': form.processing }" class="btn btn-sm btn-outline-secondary">Save</button>
-                    <button v-if="form.processing" class="btn btn-sm btn-outline-secondary" type="button" disabled>
+                    <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2 rounded-3">Back</Link>
+                    <button type="submit" :class="{ 'btn d-none': form.processing }" class="btn btn-sm btn-outline-secondary rounded-3">Save</button>
+                    <button v-if="form.processing" class="btn btn-sm btn-outline-secondary rounded-3" type="button" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         <span class="visually-hidden">Loading...</span>
                     </button>
@@ -74,6 +74,8 @@ export default {
 }
 </script>
 
-<style>
-    
+<style scoped>
+    .form-control:focus {
+      border-color: #8592A3 !important;
+    }
 </style>

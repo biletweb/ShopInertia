@@ -3,8 +3,16 @@
         <title>{{ title }}</title>
     </Head>
 
-    <div class="d-flex justify-content-end mb-2">
-        <Link :href="route('users.create')" type="button" class="btn btn-sm btn-outline-secondary">Create user</Link>
+    <div class="d-flex justify-content-between mb-2 flex-sm-row flex-column gap-2">
+        <form @submit.prevent="search">
+            <div class="d-flex">
+                <input v-model="form.search" name="search" class="search-input form-control form-control-sm rounded-pill" type="text" placeholder="Search for user by email" />
+                <button v-if="form.search.length != ''" type="button" class="btn btn-sm btn-outline-secondary ms-2 rounded-3"><i class='bx bx-search' style="max-height: 18px; margin-top: -1px;"></i></button>
+            </div>
+        </form>
+        <div>
+            <Link :href="route('users.create')" type="button" class="btn btn-sm btn-outline-secondary rounded-3">Create user</Link>
+        </div>
     </div>
 
     <div v-if="users.total > 0" class="table-responsive">
@@ -41,7 +49,7 @@
 
 <script>
 import MainLayout from '../../../Layouts/Admin/MainLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, useForm } from '@inertiajs/vue3';
 import Pagination from '../../../Components/Admin/Pagination.vue';
 
 export default {
@@ -59,10 +67,26 @@ export default {
             }
         },
     },
+    setup() {
+        const form = useForm({
+            search: '',
+        });
+
+        function search() {
+            form.get(route('users.store'))
+        }
+
+        return { form, search }
+    },
     layout: MainLayout
 }
 </script>
 
-<style>
-    
+<style scoped>
+    .search-input {
+        width: 300px;
+    }
+    .form-control:focus {
+      border-color: #8592A3 !important;
+    }
 </style>

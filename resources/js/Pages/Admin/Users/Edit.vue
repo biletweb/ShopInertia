@@ -40,9 +40,9 @@
                 </div>
                 <div class="d-flex justify-content-end">
                     <div v-if="form.isDirty" class="flex-grow-1 fw-bold text-warning">Changed, do not forget to save</div>
-                    <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2">Back</Link>
-                    <button type="submit" :class="{ 'btn d-none': form.processing }" class="btn btn-sm btn-outline-success">Update</button>
-                    <button v-if="form.processing" class="btn btn-sm btn-outline-success" type="button" disabled>
+                    <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2 rounded-3">Back</Link>
+                    <button type="submit" :class="{ 'btn d-none': form.processing }" class="btn btn-sm btn-outline-success rounded-3">Update</button>
+                    <button v-if="form.processing" class="btn btn-sm btn-outline-success rounded-3" type="button" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         <span class="visually-hidden">Loading...</span>
                     </button>
@@ -84,6 +84,8 @@ export default {
 }
 </script>
 
-<style>
-    
+<style scoped>
+    .form-control:focus {
+      border-color: #8592A3 !important;
+    }
 </style>
