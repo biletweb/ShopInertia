@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded-3 mt-2 mb-3">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary rounded-3 mt-2 mb-3">
         <div class="container-fluid">
             <img src="../../src/img/logo/logo.jpg" style="max-height: 35px; opacity: .8" class="me-3" alt="logo">
             <a class="navbar-brand" href="javascript:void(0)">{{ $page.props.appName }}</a>
@@ -21,7 +21,7 @@
                     </ul>
                         <Link class="nav-item nav-link" :href="route('admin.index')">ADMIN PANEL</Link>
                     </div>
-                <ul class="navbar-nav ms-lg-auto">
+                <ul class="navbar-nav ms-md-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)"><i class="tf-icons navbar-icon bx bx-cart-alt"></i>
                             Cart</a>

@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/css/core.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/css/theme-default.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}" />
+    <style>
+        .container {
+            max-width: 960px;
+        }
+    </style>
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />

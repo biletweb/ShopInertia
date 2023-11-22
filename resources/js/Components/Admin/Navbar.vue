@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary rounded-3 mt-2 mb-3">
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary rounded-3 mt-2 mb-3">
         <div class="container-fluid">
             <Link class="navbar-brand" :href="route('admin.index')">ADMIN PANEL</Link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-ex-7">
@@ -17,7 +17,7 @@
                         </li>
                     </ul>
                 </div>
-                <ul class="navbar-nav ms-lg-auto">
+                <ul class="navbar-nav ms-md-auto">
                     <li class="nav-item">
                         <Link class="nav-link" :href="route('shop.index')">Return to store</Link>
                     </li>
