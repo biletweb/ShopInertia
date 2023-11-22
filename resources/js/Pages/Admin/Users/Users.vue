@@ -11,7 +11,7 @@
             </div>
         </form>
         <div>
-            <Link :href="route('users.create')" type="button" class="btn btn-sm btn-outline-secondary rounded-3">Create user</Link>
+            <Link :href="route('users.create')" type="button" class="btn btn-sm btn-outline-secondary rounded-3"><i class='bx bx-plus me-1'></i>User</Link>
         </div>
     </div>
 
@@ -32,8 +32,8 @@
                     <td>{{ user.formatted_created_at }}</td>
                     <td>
                         <div class="d-flex">
-                            <Link :href="route('users.edit', user.id)" role="button" class="btn btn-xs btn-outline-success rounded-1 me-2">Edit</Link>
-                            <a @click="destroy(user.id)" role="button" class="btn btn-xs btn-outline-danger rounded-1">Delete</a>
+                            <Link :href="route('users.edit', user.id)" role="button" class="btn btn-xs btn-outline-success rounded-3 me-2 text-success"><i class='bx bx-edit-alt'></i></Link>
+                            <a @click="destroy(user.id)" role="button" class="btn btn-xs btn-outline-danger rounded-3 text-danger"><i class='bx bx-trash-alt'></i></a>
                         </div>
                     </td>
                 </tr>
