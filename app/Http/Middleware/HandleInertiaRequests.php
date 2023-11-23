@@ -38,6 +38,8 @@ class HandleInertiaRequests extends Middleware
             'appName' => env('APP_NAME'),
             'appVersion' => env('APP_VERSION'),
             'message' => $request->session()->get('message'),
+            'message_warning' => $request->session()->get('message_warning'),
+            'message_danger' => $request->session()->get('message_danger'),
             'ziggy' => fn () => [
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),

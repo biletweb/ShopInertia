@@ -7,7 +7,7 @@
         <form @submit.prevent="search">
             <div class="d-flex">
                 <input v-model="form.search" name="search" class="search-input form-control form-control-sm rounded-pill" type="text" placeholder="Search for user by email" />
-                <button v-if="form.search.length != ''" type="button" class="btn btn-sm btn-outline-secondary ms-2 rounded-3"><i class='bx bx-search' style="max-height: 18px; margin-top: -1px;"></i></button>
+                <button v-if="form.search.length != ''" type="submit" class="btn btn-sm btn-outline-secondary ms-2 rounded-3"><i class='bx bx-search' style="max-height: 18px; margin-top: -1px;"></i></button>
             </div>
         </form>
         <div>
@@ -73,7 +73,7 @@ export default {
         });
 
         function search() {
-            form.get(route('users.store'))
+            form.get(route('admin.user.search'))
         }
 
         return { form, search }
