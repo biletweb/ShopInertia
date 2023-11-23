@@ -51,7 +51,7 @@ class User extends Authenticatable
 
     public function getFormattedCreatedAtAttribute()
     {
-        // return Carbon::parse($this->attributes['created_at'])->format('Y.m.d H:i:s');
-        return Carbon::parse($this->attributes['created_at'])->diffForHumans();
+        return Carbon::parse($this->attributes['created_at'])->format('d.m.Y H:i');
+        // return Carbon::parse($this->attributes['created_at'])->diffForHumans();
     }
 }
