@@ -19,9 +19,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Language</a>
                         <div class="dropdown-menu">
-                            <button class="dropdown-item"><img src="../../src/img/flags/ukraine.png" style="max-width: 25px;" class="me-2">Ukrainian</button>
+                            <button @click="changeLanguage('uk')" class="dropdown-item"><img src="../../src/img/flags/ukraine.png" style="max-width: 25px;" class="me-2">Ukrainian</button>
                             <!-- <button class="dropdown-item"><img src="../../src/img/flags/russia.png" style="max-width: 25px;" class="me-2">Russian</button> -->
-                            <button class="dropdown-item" :href="route('users.index')"><img src="../../src/img/flags/english.png" style="max-width: 25px;" class="me-2">English</button>
+                            <button @click="changeLanguage('en')" class="dropdown-item" :href="route('users.index')"><img src="../../src/img/flags/english.png" style="max-width: 25px;" class="me-2">English</button>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -39,6 +39,11 @@ import { Link } from '@inertiajs/vue3';
 export default {
     components: {
         Link
+    },
+    methods: {
+        changeLanguage(locale) {
+            this.$i18n.locale = locale;
+        }
     }
 }
 </script>

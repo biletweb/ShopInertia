@@ -11,8 +11,8 @@
             </div>
         </form>
         <div>
-            <Link :href="route('users.index')" v-if="route().current('admin.user.search')" type="button" class="btn btn-sm btn-outline-secondary rounded-3">Back</Link>
-            <Link :href="route('users.create')" v-if="route().current('users.index')" type="button" class="btn btn-sm btn-outline-secondary rounded-3" style="max-height: 28px;"><i class='bx bx-plus me-1'></i>User</Link>
+            <Link :href="route('users.index')" v-if="route().current('admin.user.search')" type="button" class="btn btn-sm btn-outline-secondary rounded-3">{{ $t('Back') }}</Link>
+            <Link :href="route('users.create')" v-if="route().current('users.index')" type="button" class="btn btn-sm btn-outline-secondary rounded-3" style="max-height: 28px;"><i class='bx bx-plus me-1'></i>{{ $t('User') }}</Link>
         </div>
     </div>
 
