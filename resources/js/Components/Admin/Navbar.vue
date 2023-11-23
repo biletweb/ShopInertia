@@ -7,17 +7,23 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbar-ex-7">
-                <div class="navbar-nav me-auto">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Menu</a>
-                            <div class="dropdown-menu">
-                                <Link class="dropdown-item" :href="route('users.index')">Users</Link>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Menu</a>
+                        <div class="dropdown-menu">
+                            <Link class="dropdown-item" :href="route('users.index')">Users</Link>
+                        </div>
+                    </li>
+                </ul>
                 <ul class="navbar-nav ms-md-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Language</a>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item"><img src="../../src/img/flags/ukraine.png" style="max-width: 25px;" class="me-2">Ukrainian</button>
+                            <!-- <button class="dropdown-item"><img src="../../src/img/flags/russia.png" style="max-width: 25px;" class="me-2">Russian</button> -->
+                            <button class="dropdown-item" :href="route('users.index')"><img src="../../src/img/flags/english.png" style="max-width: 25px;" class="me-2">English</button>
+                        </div>
+                    </li>
                     <li class="nav-item">
                         <Link class="nav-link" :href="route('shop.index')">Return to store</Link>
                     </li>
