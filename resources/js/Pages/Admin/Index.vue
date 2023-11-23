@@ -1,6 +1,6 @@
 <template>
     <Head>
-        <title>{{ title }}</title>
+        <title>{{ $t(title) }}</title>
     </Head>
     <div>
         Admin Index Content

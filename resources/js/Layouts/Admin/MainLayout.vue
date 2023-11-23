@@ -10,13 +10,13 @@
 
         <div class="flex-grow-1">
             <div v-if="$page.props.message" class="alert alert-success text-center" role="alert">
-                <strong>{{ $page.props.message }}</strong>
+                <strong>{{ $t($page.props.message) }}</strong>
             </div>
             <div v-if="$page.props.message_warning" class="alert alert-warning text-center" role="alert">
-                <strong>{{ $page.props.message_warning }}</strong>
+                <strong>{{ $t($page.props.message_warning) }}</strong>
             </div>
             <div v-if="$page.props.message_danger" class="alert alert-danger text-center" role="alert">
-                <strong>{{ $page.props.message_danger }}</strong>
+                <strong>{{ $t($page.props.message_danger) }}</strong>
             </div>
 
             <slot />

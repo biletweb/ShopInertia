@@ -1,6 +1,6 @@
 <template>
     <Head>
-        <title>{{ title }}</title>
+        <title>{{ $t(title) }}</title>
     </Head>
 
     <div class="d-flex justify-content-between mb-2 flex-sm-row flex-column gap-2">

@@ -1,6 +1,6 @@
 <template>
     <Head>
-        <title>{{ title }}</title>
+        <title>{{ $t(title) }}</title>
     </Head>
 
     <form @submit.prevent="store">
