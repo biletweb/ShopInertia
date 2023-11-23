@@ -1,8 +1,10 @@
-import { Link, Head, useForm, createInertiaApp } from "@inertiajs/vue3";
-import { useSSRContext, resolveComponent, mergeProps, withCtx, createTextVNode, createVNode, toDisplayString, createSSRApp, h as h$1 } from "vue";
-import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderSlot, ssrRenderList, ssrRenderClass, ssrRenderAttr, ssrRenderStyle } from "vue/server-renderer";
+import { Link, Head, router, useForm, createInertiaApp } from "@inertiajs/vue3";
+import { useSSRContext, resolveComponent, mergeProps, withCtx, createTextVNode, toDisplayString, createVNode, createSSRApp, h as h$1 } from "vue";
+import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrRenderStyle, ssrRenderSlot, ssrRenderList, ssrRenderClass } from "vue/server-renderer";
 import createServer from "@inertiajs/vue3/server";
 import { renderToString } from "@vue/server-renderer";
+const _imports_0$1 = "/build/assets/ukraine-72fe8864.png";
+const _imports_1 = "/build/assets/english-3051b9d5.png";
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -13,53 +15,58 @@ const _export_sfc = (sfc, props) => {
 const _sfc_main$b = {
   components: {
     Link
+  },
+  methods: {
+    changeLanguage(locale) {
+      this.$i18n.locale = locale;
+    }
   }
 };
 function _sfc_ssrRender$b(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_Link = resolveComponent("Link");
-  _push(`<nav${ssrRenderAttrs(mergeProps({ class: "navbar navbar-expand-lg navbar-dark bg-secondary rounded-3 mt-2 mb-3" }, _attrs))}><div class="container-fluid">`);
+  _push(`<nav${ssrRenderAttrs(mergeProps({ class: "navbar navbar-expand-md navbar-dark bg-secondary rounded-3 mt-2 mb-3" }, _attrs))}><div class="container-fluid">`);
   _push(ssrRenderComponent(_component_Link, {
     class: "navbar-brand",
     href: _ctx.route("admin.index")
   }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`ADMIN PANEL`);
+        _push2(`${ssrInterpolate(_ctx.$t("ADMIN PANEL"))}`);
       } else {
         return [
-          createTextVNode("ADMIN PANEL")
+          createTextVNode(toDisplayString(_ctx.$t("ADMIN PANEL")), 1)
         ];
       }
     }),
     _: 1
   }, _parent));
-  _push(`<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-ex-7"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbar-ex-7"><div class="navbar-nav me-auto"><ul class="navbar-nav me-auto"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Menu</a><div class="dropdown-menu">`);
+  _push(`<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-ex-7"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbar-ex-7"><ul class="navbar-nav me-auto"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">${ssrInterpolate(_ctx.$t("Menu"))}</a><div class="dropdown-menu">`);
   _push(ssrRenderComponent(_component_Link, {
     class: "dropdown-item",
     href: _ctx.route("users.index")
   }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`Users`);
+        _push2(`${ssrInterpolate(_ctx.$t("Users"))}`);
       } else {
         return [
-          createTextVNode("Users")
+          createTextVNode(toDisplayString(_ctx.$t("Users")), 1)
         ];
       }
     }),
     _: 1
   }, _parent));
-  _push(`</div></li></ul></div><ul class="navbar-nav ms-lg-auto"><li class="nav-item">`);
+  _push(`</div></li></ul><ul class="navbar-nav ms-md-auto"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">${ssrInterpolate(_ctx.$t("Language"))}</a><div class="dropdown-menu"><button class="dropdown-item"><img${ssrRenderAttr("src", _imports_0$1)} style="${ssrRenderStyle({ "max-width": "25px" })}" class="me-2">${ssrInterpolate(_ctx.$t("Ukrainian"))}</button><button class="dropdown-item"${ssrRenderAttr("href", _ctx.route("users.index"))}><img${ssrRenderAttr("src", _imports_1)} style="${ssrRenderStyle({ "max-width": "25px" })}" class="me-2">${ssrInterpolate(_ctx.$t("English"))}</button></div></li><li class="nav-item">`);
   _push(ssrRenderComponent(_component_Link, {
     class: "nav-link",
     href: _ctx.route("shop.index")
   }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`Return to store`);
+        _push2(`${ssrInterpolate(_ctx.$t("Return to store"))}`);
       } else {
         return [
-          createTextVNode("Return to store")
+          createTextVNode(toDisplayString(_ctx.$t("Return to store")), 1)
         ];
       }
     }),
@@ -82,7 +89,7 @@ const _sfc_main$a = {
   }
 };
 function _sfc_ssrRender$a(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  _push(`<footer${ssrRenderAttrs(mergeProps({ class: "content-footer footer bg-secondary rounded-3 mt-3 mb-2" }, _attrs))}><div class="container-fluid d-flex flex-md-row flex-column justify-content-between align-items-md-center gap-1 py-3"><div><span class="footer-text fw-bold link-light">${ssrInterpolate(_ctx.$page.props.appName)}</span> <span class="link-light">© ${ssrInterpolate($data.currentYear)}</span></div><div><span class="footer-link fw-bold link-light">Version ${ssrInterpolate(_ctx.$page.props.appVersion)}</span></div></div></footer>`);
+  _push(`<footer${ssrRenderAttrs(mergeProps({ class: "content-footer footer bg-secondary rounded-3 mt-3 mb-2" }, _attrs))}><div class="container-fluid d-flex flex-md-row flex-column justify-content-between align-items-md-center gap-1 py-3"><div><span class="footer-text fw-bold link-light">${ssrInterpolate(_ctx.$page.props.appName)}</span> <span class="link-light">© ${ssrInterpolate($data.currentYear)}</span></div><div><span class="footer-link fw-bold link-light">${ssrInterpolate(_ctx.$t("Version"))} ${ssrInterpolate(_ctx.$page.props.appVersion)}</span></div></div></footer>`);
 }
 const _sfc_setup$a = _sfc_main$a.setup;
 _sfc_main$a.setup = (props, ctx) => {
@@ -91,12 +98,42 @@ _sfc_main$a.setup = (props, ctx) => {
   return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
 };
 const Footer$1 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["ssrRender", _sfc_ssrRender$a]]);
-const MainLayout_vue_vue_type_style_index_0_scoped_a05215f1_lang = "";
 const _sfc_main$9 = {
   components: {
     Navbar: Navbar$1,
     Footer: Footer$1,
     Head
+  },
+  props: {
+    message: String,
+    message_warning: String,
+    message_danger: String
+  },
+  watch: {
+    message() {
+      if (this.message) {
+        setTimeout(() => {
+          document.getElementById("success-alert").style.display = "none";
+          router.reload();
+        }, 3e3);
+      }
+    },
+    message_warning() {
+      if (this.message_warning) {
+        setTimeout(() => {
+          document.getElementById("warning-alert").style.display = "none";
+          router.reload();
+        }, 5e3);
+      }
+    },
+    message_danger() {
+      if (this.message_danger) {
+        setTimeout(() => {
+          document.getElementById("danger-alert").style.display = "none";
+          router.reload();
+        }, 5e3);
+      }
+    }
   }
 };
 function _sfc_ssrRender$9(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
@@ -107,7 +144,7 @@ function _sfc_ssrRender$9(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   _push(ssrRenderComponent(_component_Head, null, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`<title data-v-a05215f1${_scopeId}>${ssrInterpolate(_ctx.$page.props.appName)}</title><meta head-key="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" data-v-a05215f1${_scopeId}><meta charset="utf-8" data-v-a05215f1${_scopeId}>`);
+        _push2(`<title${_scopeId}>${ssrInterpolate(_ctx.$page.props.appName)}</title><meta head-key="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"${_scopeId}><meta charset="utf-8"${_scopeId}>`);
       } else {
         return [
           createVNode("title", null, toDisplayString(_ctx.$page.props.appName), 1),
@@ -122,11 +159,21 @@ function _sfc_ssrRender$9(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     }),
     _: 1
   }, _parent));
-  _push(`<div class="container d-flex flex-column justify-content-between min-vh-100" data-v-a05215f1>`);
+  _push(`<div class="container d-flex flex-column justify-content-between min-vh-100">`);
   _push(ssrRenderComponent(_component_Navbar, null, null, _parent));
-  _push(`<div class="flex-grow-1" data-v-a05215f1>`);
+  _push(`<div class="flex-grow-1">`);
   if (_ctx.$page.props.message) {
-    _push(`<div class="alert alert-success" role="alert" data-v-a05215f1>${ssrInterpolate(_ctx.$page.props.message)}</div>`);
+    _push(`<div id="success-alert" class="alert alert-success text-center" role="alert"><strong>${ssrInterpolate(_ctx.$t(_ctx.$page.props.message))}</strong></div>`);
+  } else {
+    _push(`<!---->`);
+  }
+  if (_ctx.$page.props.message_warning) {
+    _push(`<div id="warning-alert" class="alert alert-warning text-center" role="alert"><strong>${ssrInterpolate(_ctx.$t(_ctx.$page.props.message_warning))}</strong></div>`);
+  } else {
+    _push(`<!---->`);
+  }
+  if (_ctx.$page.props.message_danger) {
+    _push(`<div id="danger-alert" class="alert alert-danger text-center" role="alert"><strong>${ssrInterpolate(_ctx.$t(_ctx.$page.props.message_danger))}</strong></div>`);
   } else {
     _push(`<!---->`);
   }
@@ -141,7 +188,7 @@ _sfc_main$9.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Layouts/Admin/MainLayout.vue");
   return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
 };
-const MainLayout$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["ssrRender", _sfc_ssrRender$9], ["__scopeId", "data-v-a05215f1"]]);
+const MainLayout$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["ssrRender", _sfc_ssrRender$9]]);
 const _sfc_main$8 = {
   components: {
     Head
@@ -157,10 +204,10 @@ function _sfc_ssrRender$8(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   _push(ssrRenderComponent(_component_Head, null, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`<title${_scopeId}>${ssrInterpolate($props.title)}</title>`);
+        _push2(`<title${_scopeId}>${ssrInterpolate(_ctx.$t($props.title))}</title>`);
       } else {
         return [
-          createVNode("title", null, toDisplayString($props.title), 1)
+          createVNode("title", null, toDisplayString(_ctx.$t($props.title)), 1)
         ];
       }
     }),
@@ -213,6 +260,7 @@ _sfc_main$7.setup = (props, ctx) => {
   return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
 };
 const Pagination = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["ssrRender", _sfc_ssrRender$7], ["__scopeId", "data-v-a66ae22e"]]);
+const Create_vue_vue_type_style_index_0_scoped_8ef405ad_lang = "";
 const _sfc_main$6 = {
   components: {
     Head,
@@ -243,53 +291,53 @@ function _sfc_ssrRender$6(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   _push(ssrRenderComponent(_component_Head, null, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`<title${_scopeId}>${ssrInterpolate($props.title)}</title>`);
+        _push2(`<title data-v-8ef405ad${_scopeId}>${ssrInterpolate(_ctx.$t($props.title))}</title>`);
       } else {
         return [
-          createVNode("title", null, toDisplayString($props.title), 1)
+          createVNode("title", null, toDisplayString(_ctx.$t($props.title)), 1)
         ];
       }
     }),
     _: 1
   }, _parent));
-  _push(`<form><div class="card"><div class="card-body"><div class="mb-3"><label for="name" class="form-label">Name</label><input${ssrRenderAttr("value", $setup.form.name)} type="text" name="name" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.name }, "form-control"])}" id="name" placeholder="Enter name">`);
+  _push(`<form data-v-8ef405ad><div class="card" data-v-8ef405ad><div class="card-body" data-v-8ef405ad><div class="mb-3" data-v-8ef405ad><label for="name" class="form-label" data-v-8ef405ad>${ssrInterpolate(_ctx.$t("Name"))}</label><input${ssrRenderAttr("value", $setup.form.name)} type="text" name="name" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.name }, "form-control"])}" id="name"${ssrRenderAttr("placeholder", _ctx.$t("Enter name"))} data-v-8ef405ad>`);
   if ($setup.form.errors.name) {
-    _push(`<div class="invalid-feedback">${ssrInterpolate($setup.form.errors.name)}</div>`);
+    _push(`<div class="invalid-feedback" data-v-8ef405ad>${ssrInterpolate($setup.form.errors.name)}</div>`);
   } else {
     _push(`<!---->`);
   }
-  _push(`</div><div class="mb-3"><label for="email" class="form-label">Email</label><input${ssrRenderAttr("value", $setup.form.email)} type="text" name="email" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.email }, "form-control"])}" id="email" placeholder="Enter email">`);
+  _push(`</div><div class="mb-3" data-v-8ef405ad><label for="email" class="form-label" data-v-8ef405ad>${ssrInterpolate(_ctx.$t("Email"))}</label><input${ssrRenderAttr("value", $setup.form.email)} type="text" name="email" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.email }, "form-control"])}" id="email"${ssrRenderAttr("placeholder", _ctx.$t("Enter email"))} data-v-8ef405ad>`);
   if ($setup.form.errors.email) {
-    _push(`<div class="invalid-feedback">${ssrInterpolate($setup.form.errors.email)}</div>`);
+    _push(`<div class="invalid-feedback" data-v-8ef405ad>${ssrInterpolate($setup.form.errors.email)}</div>`);
   } else {
     _push(`<!---->`);
   }
-  _push(`</div><div class="mb-3"><label for="password" class="form-label">Password</label><input${ssrRenderAttr("value", $setup.form.password)} type="password" name="password" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.password }, "form-control"])}" id="password" placeholder="Enter password">`);
+  _push(`</div><div class="mb-3" data-v-8ef405ad><label for="password" class="form-label" data-v-8ef405ad>${ssrInterpolate(_ctx.$t("Password"))}</label><input${ssrRenderAttr("value", $setup.form.password)} type="password" name="password" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.password }, "form-control"])}" id="password"${ssrRenderAttr("placeholder", _ctx.$t("Enter password"))} data-v-8ef405ad>`);
   if ($setup.form.errors.password) {
-    _push(`<div class="invalid-feedback">${ssrInterpolate($setup.form.errors.password)}</div>`);
+    _push(`<div class="invalid-feedback" data-v-8ef405ad>${ssrInterpolate($setup.form.errors.password)}</div>`);
   } else {
     _push(`<!---->`);
   }
-  _push(`</div><div class="mb-3"><label for="password_confirmation" class="form-label">Confirm password</label><input${ssrRenderAttr("value", $setup.form.password_confirmation)} type="password" name="password_confirmation" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.password }, "form-control"])}" id="password_confirmation" placeholder="Enter password"></div><div class="d-flex justify-content-end">`);
+  _push(`</div><div class="mb-3" data-v-8ef405ad><label for="password_confirmation" class="form-label" data-v-8ef405ad>${ssrInterpolate(_ctx.$t("Confirm password"))}</label><input${ssrRenderAttr("value", $setup.form.password_confirmation)} type="password" name="password_confirmation" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.password }, "form-control"])}" id="password_confirmation"${ssrRenderAttr("placeholder", _ctx.$t("Enter password"))} data-v-8ef405ad></div><div class="d-flex justify-content-end" data-v-8ef405ad>`);
   _push(ssrRenderComponent(_component_Link, {
     href: _ctx.route("users.index"),
     type: "button",
-    class: "btn btn-sm btn-outline-secondary me-2"
+    class: "btn btn-sm btn-outline-secondary me-2 rounded-3"
   }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`Back`);
+        _push2(`${ssrInterpolate(_ctx.$t("Back"))}`);
       } else {
         return [
-          createTextVNode("Back")
+          createTextVNode(toDisplayString(_ctx.$t("Back")), 1)
         ];
       }
     }),
     _: 1
   }, _parent));
-  _push(`<button type="submit" class="${ssrRenderClass([{ "btn d-none": $setup.form.processing }, "btn btn-sm btn-outline-secondary"])}">Save</button>`);
+  _push(`<button type="submit" class="${ssrRenderClass([{ "btn d-none": $setup.form.processing }, "btn btn-sm btn-outline-secondary rounded-3"])}" data-v-8ef405ad>${ssrInterpolate(_ctx.$t("Save"))}</button>`);
   if ($setup.form.processing) {
-    _push(`<button class="btn btn-sm btn-outline-secondary" type="button" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="visually-hidden">Loading...</span></button>`);
+    _push(`<button class="btn btn-sm btn-outline-secondary rounded-3" type="button" disabled data-v-8ef405ad><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" data-v-8ef405ad></span><span class="visually-hidden" data-v-8ef405ad>Loading...</span></button>`);
   } else {
     _push(`<!---->`);
   }
@@ -301,11 +349,12 @@ _sfc_main$6.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Users/Create.vue");
   return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
 };
-const Create = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["ssrRender", _sfc_ssrRender$6]]);
+const Create = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["ssrRender", _sfc_ssrRender$6], ["__scopeId", "data-v-8ef405ad"]]);
 const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Create
 }, Symbol.toStringTag, { value: "Module" }));
+const Edit_vue_vue_type_style_index_0_scoped_b8cf79ff_lang = "";
 const _sfc_main$5 = {
   components: {
     Head,
@@ -338,64 +387,64 @@ function _sfc_ssrRender$5(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   _push(ssrRenderComponent(_component_Head, null, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`<title${_scopeId}>${ssrInterpolate($props.title)}</title>`);
+        _push2(`<title data-v-b8cf79ff${_scopeId}>${ssrInterpolate(_ctx.$t($props.title))}</title>`);
       } else {
         return [
-          createVNode("title", null, toDisplayString($props.title), 1)
+          createVNode("title", null, toDisplayString(_ctx.$t($props.title)), 1)
         ];
       }
     }),
     _: 1
   }, _parent));
-  _push(`<form><div class="card"><div class="card-body"><div class="mb-3"><label for="name" class="form-label">Name</label><input${ssrRenderAttr("value", $setup.form.name)} type="text" name="name" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.name }, "form-control"])}" id="name" placeholder="Enter name">`);
+  _push(`<form data-v-b8cf79ff><div class="card" data-v-b8cf79ff><div class="card-body" data-v-b8cf79ff><div class="mb-3" data-v-b8cf79ff><label for="name" class="form-label" data-v-b8cf79ff>${ssrInterpolate(_ctx.$t("Name"))}</label><input${ssrRenderAttr("value", $setup.form.name)} type="text" name="name" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.name }, "form-control"])}" id="name"${ssrRenderAttr("placeholder", _ctx.$t("Enter name"))} data-v-b8cf79ff>`);
   if ($setup.form.errors.name) {
-    _push(`<div class="invalid-feedback">${ssrInterpolate($setup.form.errors.name)}</div>`);
+    _push(`<div class="invalid-feedback" data-v-b8cf79ff>${ssrInterpolate($setup.form.errors.name)}</div>`);
   } else {
     _push(`<!---->`);
   }
-  _push(`</div><div class="mb-3"><label for="email" class="form-label">Email</label><input${ssrRenderAttr("value", $setup.form.email)} type="text" name="email" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.email }, "form-control"])}" id="email" placeholder="Enter email">`);
+  _push(`</div><div class="mb-3" data-v-b8cf79ff><label for="email" class="form-label" data-v-b8cf79ff>${ssrInterpolate(_ctx.$t("Email"))}</label><input${ssrRenderAttr("value", $setup.form.email)} type="text" name="email" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.email }, "form-control"])}" id="email"${ssrRenderAttr("placeholder", _ctx.$t("Enter email"))} data-v-b8cf79ff>`);
   if ($setup.form.errors.email) {
-    _push(`<div class="invalid-feedback">${ssrInterpolate($setup.form.errors.email)}</div>`);
+    _push(`<div class="invalid-feedback" data-v-b8cf79ff>${ssrInterpolate($setup.form.errors.email)}</div>`);
   } else {
     _push(`<!---->`);
   }
-  _push(`</div><div class="mb-3"><label for="current_password" class="form-label">Current password</label><input${ssrRenderAttr("value", $setup.form.current_password)} type="password" name="current_password" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.current_password }, "form-control"])}" id="current_password" placeholder="Enter password">`);
+  _push(`</div><div class="mb-3" data-v-b8cf79ff><label for="current_password" class="form-label" data-v-b8cf79ff>${ssrInterpolate(_ctx.$t("Current password"))}</label><input${ssrRenderAttr("value", $setup.form.current_password)} type="password" name="current_password" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.current_password }, "form-control"])}" id="current_password"${ssrRenderAttr("placeholder", _ctx.$t("Enter password"))} data-v-b8cf79ff>`);
   if ($setup.form.errors.current_password) {
-    _push(`<div class="invalid-feedback">${ssrInterpolate($setup.form.errors.current_password)}</div>`);
+    _push(`<div class="invalid-feedback" data-v-b8cf79ff>${ssrInterpolate($setup.form.errors.current_password)}</div>`);
   } else {
     _push(`<!---->`);
   }
-  _push(`</div><div class="mb-3"><label for="password" class="form-label">New password</label><input${ssrRenderAttr("value", $setup.form.password)} type="password" name="password" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.password }, "form-control"])}" id="password" placeholder="Enter password">`);
+  _push(`</div><div class="mb-3" data-v-b8cf79ff><label for="password" class="form-label" data-v-b8cf79ff>${ssrInterpolate(_ctx.$t("New password"))}</label><input${ssrRenderAttr("value", $setup.form.password)} type="password" name="password" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.password }, "form-control"])}" id="password"${ssrRenderAttr("placeholder", _ctx.$t("Enter password"))} data-v-b8cf79ff>`);
   if ($setup.form.errors.password) {
-    _push(`<div class="invalid-feedback">${ssrInterpolate($setup.form.errors.password)}</div>`);
+    _push(`<div class="invalid-feedback" data-v-b8cf79ff>${ssrInterpolate($setup.form.errors.password)}</div>`);
   } else {
     _push(`<!---->`);
   }
-  _push(`</div><div class="mb-3"><label for="password_confirmation" class="form-label">Confirm password</label><input${ssrRenderAttr("value", $setup.form.password_confirmation)} type="password" name="password_confirmation" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.password }, "form-control"])}" id="password_confirmation" placeholder="Enter password"></div><div class="d-flex justify-content-end">`);
+  _push(`</div><div class="mb-3" data-v-b8cf79ff><label for="password_confirmation" class="form-label" data-v-b8cf79ff>${ssrInterpolate(_ctx.$t("Confirm password"))}</label><input${ssrRenderAttr("value", $setup.form.password_confirmation)} type="password" name="password_confirmation" class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.password }, "form-control"])}" id="password_confirmation"${ssrRenderAttr("placeholder", _ctx.$t("Enter password"))} data-v-b8cf79ff></div><div class="d-flex justify-content-end" data-v-b8cf79ff>`);
   if ($setup.form.isDirty) {
-    _push(`<div class="flex-grow-1 fw-bold text-warning">Changed, do not forget to save</div>`);
+    _push(`<div class="flex-grow-1 fw-bold text-warning" data-v-b8cf79ff>${ssrInterpolate(_ctx.$t("Changed, do not forget to save"))}</div>`);
   } else {
     _push(`<!---->`);
   }
   _push(ssrRenderComponent(_component_Link, {
     href: _ctx.route("users.index"),
     type: "button",
-    class: "btn btn-sm btn-outline-secondary me-2"
+    class: "btn btn-sm btn-outline-secondary me-2 rounded-3"
   }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`Back`);
+        _push2(`${ssrInterpolate(_ctx.$t("Back"))}`);
       } else {
         return [
-          createTextVNode("Back")
+          createTextVNode(toDisplayString(_ctx.$t("Back")), 1)
         ];
       }
     }),
     _: 1
   }, _parent));
-  _push(`<button type="submit" class="${ssrRenderClass([{ "btn d-none": $setup.form.processing }, "btn btn-sm btn-outline-success"])}">Update</button>`);
+  _push(`<button type="submit" class="${ssrRenderClass([{ "btn d-none": $setup.form.processing }, "btn btn-sm btn-outline-success rounded-3"])}" data-v-b8cf79ff>${ssrInterpolate(_ctx.$t("Update"))}</button>`);
   if ($setup.form.processing) {
-    _push(`<button class="btn btn-sm btn-outline-success" type="button" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="visually-hidden">Loading...</span></button>`);
+    _push(`<button class="btn btn-sm btn-outline-success rounded-3" type="button" disabled data-v-b8cf79ff><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" data-v-b8cf79ff></span><span class="visually-hidden" data-v-b8cf79ff>Loading...</span></button>`);
   } else {
     _push(`<!---->`);
   }
@@ -407,11 +456,12 @@ _sfc_main$5.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Users/Edit.vue");
   return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
 };
-const Edit = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["ssrRender", _sfc_ssrRender$5]]);
+const Edit = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["ssrRender", _sfc_ssrRender$5], ["__scopeId", "data-v-b8cf79ff"]]);
 const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Edit
 }, Symbol.toStringTag, { value: "Module" }));
+const Users_vue_vue_type_style_index_0_scoped_b0e7f126_lang = "";
 const _sfc_main$4 = {
   components: {
     Head,
@@ -429,6 +479,15 @@ const _sfc_main$4 = {
       }
     }
   },
+  setup() {
+    const form = useForm({
+      search: ""
+    });
+    function search() {
+      form.get(route("admin.user.search"));
+    }
+    return { form, search };
+  },
   layout: MainLayout$1
 };
 function _sfc_ssrRender$4(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
@@ -439,58 +498,90 @@ function _sfc_ssrRender$4(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   _push(ssrRenderComponent(_component_Head, null, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`<title${_scopeId}>${ssrInterpolate($props.title)}</title>`);
+        _push2(`<title data-v-b0e7f126${_scopeId}>${ssrInterpolate(_ctx.$t($props.title))}</title>`);
       } else {
         return [
-          createVNode("title", null, toDisplayString($props.title), 1)
+          createVNode("title", null, toDisplayString(_ctx.$t($props.title)), 1)
         ];
       }
     }),
     _: 1
   }, _parent));
-  _push(`<div class="d-flex justify-content-end mb-2">`);
-  _push(ssrRenderComponent(_component_Link, {
-    href: _ctx.route("users.create"),
-    type: "button",
-    class: "btn btn-sm btn-outline-secondary"
-  }, {
-    default: withCtx((_, _push2, _parent2, _scopeId) => {
-      if (_push2) {
-        _push2(`Create user`);
-      } else {
-        return [
-          createTextVNode("Create user")
-        ];
-      }
-    }),
-    _: 1
-  }, _parent));
-  _push(`</div>`);
+  _push(`<div class="d-flex justify-content-between mb-2 flex-sm-row flex-column gap-2" data-v-b0e7f126><form data-v-b0e7f126><div class="d-flex" data-v-b0e7f126><input${ssrRenderAttr("value", $setup.form.search)} name="search" class="search-input form-control form-control-sm rounded-pill" type="text"${ssrRenderAttr("placeholder", _ctx.$t("Search for user by email"))} data-v-b0e7f126>`);
+  if ($setup.form.search.length != "") {
+    _push(`<button type="submit" class="btn btn-sm btn-outline-secondary ms-2 rounded-3" data-v-b0e7f126><i class="bx bx-search" style="${ssrRenderStyle({ "max-height": "18px", "margin-top": "-1px" })}" data-v-b0e7f126></i></button>`);
+  } else {
+    _push(`<!---->`);
+  }
+  _push(`</div></form><div data-v-b0e7f126>`);
+  if (_ctx.route().current("admin.user.search")) {
+    _push(ssrRenderComponent(_component_Link, {
+      href: _ctx.route("users.index"),
+      type: "button",
+      class: "btn btn-sm btn-outline-secondary rounded-3"
+    }, {
+      default: withCtx((_, _push2, _parent2, _scopeId) => {
+        if (_push2) {
+          _push2(`${ssrInterpolate(_ctx.$t("Back"))}`);
+        } else {
+          return [
+            createTextVNode(toDisplayString(_ctx.$t("Back")), 1)
+          ];
+        }
+      }),
+      _: 1
+    }, _parent));
+  } else {
+    _push(`<!---->`);
+  }
+  if (_ctx.route().current("users.index")) {
+    _push(ssrRenderComponent(_component_Link, {
+      href: _ctx.route("users.create"),
+      type: "button",
+      class: "btn btn-sm btn-outline-secondary rounded-3",
+      style: { "max-height": "28px" }
+    }, {
+      default: withCtx((_, _push2, _parent2, _scopeId) => {
+        if (_push2) {
+          _push2(`<i class="bx bx-plus me-1" data-v-b0e7f126${_scopeId}></i>${ssrInterpolate(_ctx.$t("User"))}`);
+        } else {
+          return [
+            createVNode("i", { class: "bx bx-plus me-1" }),
+            createTextVNode(toDisplayString(_ctx.$t("User")), 1)
+          ];
+        }
+      }),
+      _: 1
+    }, _parent));
+  } else {
+    _push(`<!---->`);
+  }
+  _push(`</div></div>`);
   if ($props.users.total > 0) {
-    _push(`<div class="table-responsive"><table class="table"><thead><tr><th>Name</th><th>Email</th><th>Created</th><th>Actions</th></tr></thead><tbody><!--[-->`);
+    _push(`<div class="table-responsive" data-v-b0e7f126><table class="table table-hover" data-v-b0e7f126><thead data-v-b0e7f126><tr data-v-b0e7f126><th data-v-b0e7f126>${ssrInterpolate(_ctx.$t("Name"))}</th><th data-v-b0e7f126>${ssrInterpolate(_ctx.$t("Email"))}</th><th data-v-b0e7f126>${ssrInterpolate(_ctx.$t("Created"))}</th><th data-v-b0e7f126>${ssrInterpolate(_ctx.$t("Actions"))}</th></tr></thead><tbody data-v-b0e7f126><!--[-->`);
     ssrRenderList($props.users.data, (user) => {
-      _push(`<tr><td>${ssrInterpolate(user.name)}</td><td>${ssrInterpolate(user.email)}</td><td>${ssrInterpolate(user.formatted_created_at)}</td><td>`);
+      _push(`<tr data-v-b0e7f126><td data-v-b0e7f126>${ssrInterpolate(user.name)}</td><td data-v-b0e7f126>${ssrInterpolate(user.email)}</td><td data-v-b0e7f126>${ssrInterpolate(user.formatted_created_at)}</td><td data-v-b0e7f126><div class="d-flex" data-v-b0e7f126>`);
       _push(ssrRenderComponent(_component_Link, {
         href: _ctx.route("users.edit", user.id),
         role: "button",
-        class: "btn btn-xs btn-outline-success rounded-1 me-2"
+        class: "btn btn-xs btn-outline-success rounded-3 me-2 text-success"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`Edit`);
+            _push2(`<i class="bx bx-edit-alt" data-v-b0e7f126${_scopeId}></i>`);
           } else {
             return [
-              createTextVNode("Edit")
+              createVNode("i", { class: "bx bx-edit-alt" })
             ];
           }
         }),
         _: 2
       }, _parent));
-      _push(`<a role="button" class="btn btn-xs btn-outline-danger rounded-1">Delete</a></td></tr>`);
+      _push(`<a role="button" class="btn btn-xs btn-outline-danger rounded-3 text-danger" data-v-b0e7f126><i class="bx bx-trash-alt" data-v-b0e7f126></i></a></div></td></tr>`);
     });
     _push(`<!--]--></tbody></table></div>`);
   } else {
-    _push(`<div class="alert alert-secondary rounded-3 text-center fw-bold" role="alert"> No users </div>`);
+    _push(`<div class="alert alert-secondary rounded-3 text-center fw-bold" role="alert" data-v-b0e7f126> No users </div>`);
   }
   _push(ssrRenderComponent(_component_Pagination, {
     links: $props.users.links
@@ -503,7 +594,7 @@ _sfc_main$4.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Users/Users.vue");
   return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
 };
-const Users = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["ssrRender", _sfc_ssrRender$4]]);
+const Users = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["ssrRender", _sfc_ssrRender$4], ["__scopeId", "data-v-b0e7f126"]]);
 const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Users
@@ -516,7 +607,7 @@ const _sfc_main$3 = {
 };
 function _sfc_ssrRender$3(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_Link = resolveComponent("Link");
-  _push(`<nav${ssrRenderAttrs(mergeProps({ class: "navbar navbar-expand-lg navbar-dark bg-primary rounded-3 mt-2 mb-3" }, _attrs))}><div class="container-fluid"><img${ssrRenderAttr("src", _imports_0)} style="${ssrRenderStyle({ "max-height": "35px", "opacity": ".8" })}" class="me-3" alt="logo"><a class="navbar-brand" href="javascript:void(0)">${ssrInterpolate(_ctx.$page.props.appName)}</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-ex-7"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbar-ex-7"><div class="navbar-nav me-auto"><ul class="navbar-nav me-auto"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Categories</a><div class="dropdown-menu"><a class="dropdown-item" href="javascript:void(0)">Category 1</a><a class="dropdown-item" href="javascript:void(0)">Category 2</a><a class="dropdown-item" href="javascript:void(0)">Category 3</a></div></li></ul>`);
+  _push(`<nav${ssrRenderAttrs(mergeProps({ class: "navbar navbar-expand-md navbar-dark bg-primary rounded-3 mt-2 mb-3" }, _attrs))}><div class="container-fluid"><img${ssrRenderAttr("src", _imports_0)} style="${ssrRenderStyle({ "max-height": "35px", "opacity": ".8" })}" class="me-3" alt="logo"><a class="navbar-brand" href="javascript:void(0)">${ssrInterpolate(_ctx.$page.props.appName)}</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-ex-7"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbar-ex-7"><div class="navbar-nav me-auto"><ul class="navbar-nav me-auto"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Categories</a><div class="dropdown-menu"><a class="dropdown-item" href="javascript:void(0)">Category 1</a><a class="dropdown-item" href="javascript:void(0)">Category 2</a><a class="dropdown-item" href="javascript:void(0)">Category 3</a></div></li></ul>`);
   _push(ssrRenderComponent(_component_Link, {
     class: "nav-item nav-link",
     href: _ctx.route("admin.index")
@@ -532,7 +623,7 @@ function _sfc_ssrRender$3(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     }),
     _: 1
   }, _parent));
-  _push(`</div><ul class="navbar-nav ms-lg-auto"><li class="nav-item"><a class="nav-link" href="javascript:void(0)"><i class="tf-icons navbar-icon bx bx-cart-alt"></i> Cart</a></li><li class="nav-item"><a class="nav-link" href="javascript:void(0)"><i class="tf-icons navbar-icon bx bx-user"></i> Profile</a></li><li class="nav-item"><a class="nav-link" href="javascript:void(0)"><i class="tf-icons navbar-icon bx bx-lock-open-alt"></i> Go out</a></li></ul></div></div></nav>`);
+  _push(`</div><ul class="navbar-nav ms-md-auto"><li class="nav-item"><a class="nav-link" href="javascript:void(0)"><i class="tf-icons navbar-icon bx bx-cart-alt"></i> Cart</a></li><li class="nav-item"><a class="nav-link" href="javascript:void(0)"><i class="tf-icons navbar-icon bx bx-user"></i> Profile</a></li><li class="nav-item"><a class="nav-link" href="javascript:void(0)"><i class="tf-icons navbar-icon bx bx-lock-open-alt"></i> Go out</a></li></ul></div></div></nav>`);
 }
 const _sfc_setup$3 = _sfc_main$3.setup;
 _sfc_main$3.setup = (props, ctx) => {
@@ -558,7 +649,6 @@ _sfc_main$2.setup = (props, ctx) => {
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
 const Footer = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["ssrRender", _sfc_ssrRender$2]]);
-const MainLayout_vue_vue_type_style_index_0_scoped_a42a2774_lang = "";
 const _sfc_main$1 = {
   components: {
     Navbar,
@@ -574,7 +664,7 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   _push(ssrRenderComponent(_component_Head, null, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`<title data-v-a42a2774${_scopeId}>${ssrInterpolate(_ctx.$page.props.appName)}</title><meta head-key="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" data-v-a42a2774${_scopeId}><meta charset="utf-8" data-v-a42a2774${_scopeId}>`);
+        _push2(`<title${_scopeId}>${ssrInterpolate(_ctx.$page.props.appName)}</title><meta head-key="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"${_scopeId}><meta charset="utf-8"${_scopeId}>`);
       } else {
         return [
           createVNode("title", null, toDisplayString(_ctx.$page.props.appName), 1),
@@ -589,9 +679,9 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     }),
     _: 1
   }, _parent));
-  _push(`<div class="container d-flex flex-column justify-content-between min-vh-100" data-v-a42a2774>`);
+  _push(`<div class="container d-flex flex-column justify-content-between min-vh-100">`);
   _push(ssrRenderComponent(_component_Navbar, null, null, _parent));
-  _push(`<div class="flex-grow-1" data-v-a42a2774>`);
+  _push(`<div class="flex-grow-1">`);
   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
   _push(`</div>`);
   _push(ssrRenderComponent(_component_Footer, null, null, _parent));
@@ -603,7 +693,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Layouts/Shop/MainLayout.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const MainLayout = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender$1], ["__scopeId", "data-v-a42a2774"]]);
+const MainLayout = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender$1]]);
 const _sfc_main = {
   components: {
     Head
