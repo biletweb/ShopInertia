@@ -6,7 +6,7 @@
     <div class="d-flex justify-content-between mb-2 flex-sm-row flex-column gap-2">
         <form @submit.prevent="search">
             <div class="d-flex">
-                <input v-model="form.search" name="search" class="search-input form-control form-control-sm rounded-pill" type="text" placeholder="Search for user by email" />
+                <input v-model="form.search" name="search" class="search-input form-control form-control-sm rounded-pill" type="text" :placeholder="$t('Search for user by email')" />
                 <button v-if="form.search.length != ''" type="submit" class="btn btn-sm btn-outline-secondary ms-2 rounded-3"><i class='bx bx-search' style="max-height: 18px; margin-top: -1px;"></i></button>
             </div>
         </form>
@@ -20,10 +20,10 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Created</th>
-                    <th>Actions</th>
+                    <th>{{ $t('Name') }}</th>
+                    <th>{{ $t('Email') }}</th>
+                    <th>{{ $t('Created') }}</th>
+                    <th>{{ $t('Actions') }}</th>
                 </tr>
             </thead>
             <tbody>
