@@ -32,5 +32,12 @@
     "Create user": "Створити користувача",
     "Search user": "Пошук користувача",
     "Edit user": "Редагувати користувача",
-    "No users": "Немає користувачів"
+    "No users": "Немає користувачів",
+    "Enter current password.": "Введіть поточний пароль.",
+    "The password field is required.": "Поле пароля є обов’язковим.",
+    "The password field confirmation does not match.": "Поле підтвердження пароля не збігається.",
+    "The name field is required.": "Поле імені є обов’язковим для заповнення.",
+    "The email field is required.": "Поле email є обов’язковим для заповнення.",
+    "The password field must be at least 4 characters.": "Поле пароля має містити не менше 4 символів.",
+    "The email field must be a valid email address.": "Поле email має бути дійсною електронною адресою."
 }
