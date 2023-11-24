@@ -21,7 +21,3 @@ export default {
     layout: MainLayout
 }
 </script>
-
-<style>
-    
-</style>
