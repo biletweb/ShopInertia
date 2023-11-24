@@ -40,12 +40,14 @@
                 </div>
                 <div class="d-flex justify-content-end">
                     <div v-if="form.isDirty" class="flex-grow-1 fw-bold text-warning">{{ $t('Changed, do not forget to save') }}</div>
-                    <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2 rounded-3">{{ $t('Back') }}</Link>
-                    <button type="submit" :class="{ 'btn d-none': form.processing }" class="btn btn-sm btn-outline-success rounded-3">{{ $t('Update') }}</button>
-                    <button v-if="form.processing" class="btn btn-sm btn-outline-success rounded-3" type="button" disabled>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        <span class="visually-hidden">Loading...</span>
-                    </button>
+                    <div>
+                        <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2 rounded-3">{{ $t('Back') }}</Link>
+                        <button type="submit" :class="{ 'btn d-none': form.processing }" class="btn btn-sm btn-outline-success rounded-3">{{ $t('Update') }}</button>
+                        <button v-if="form.processing" class="btn btn-sm btn-outline-success rounded-3" type="button" style="height: 28px;" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            <span class="visually-hidden">Loading...</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,10 +63,12 @@ export default {
     components: {
         Head, Pagination, Link
     },
+
     props: {
         title: String,
         user: Object
     },
+
     setup(props) {
         const form = useForm({
             name: props.user.name,
@@ -80,6 +84,7 @@ export default {
 
         return { form, update }
     },
+    
     layout: MainLayout
 }
 </script>
