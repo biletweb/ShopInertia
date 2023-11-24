@@ -9,16 +9,15 @@
         <Navbar />
 
         <div class="flex-grow-1">
-            <div v-if="$page.props.message" id="success-alert" class="alert alert-success text-center" role="alert">
-                <strong>{{ $t($page.props.message) }}</strong>
+            <div v-if="$page.props.message" id="success-alert" class="alert alert-success text-center fw-bold" role="alert">
+                {{ $t($page.props.message) }}
             </div>
-            <div v-if="$page.props.message_warning" id="warning-alert" class="alert alert-warning text-center" role="alert">
-                <strong>{{ $t($page.props.message_warning) }}</strong>
+            <div v-if="$page.props.message_warning" id="warning-alert" class="alert alert-warning text-center fw-bold" role="alert">
+                {{ $t($page.props.message_warning) }}
             </div>
-            <div v-if="$page.props.message_danger" id="danger-alert" class="alert alert-danger text-center" role="alert">
-                <strong>{{ $t($page.props.message_danger) }}</strong>
+            <div v-if="$page.props.message_danger" id="danger-alert" class="alert alert-danger text-center fw-bold" role="alert">
+                {{ $t($page.props.message_danger) }}
             </div>
-
             <slot />
         </div>
 
@@ -29,8 +28,7 @@
 <script>
 import Navbar from '../../Components/Admin/Navbar.vue';
 import Footer from '../../Components/Admin/Footer.vue';
-import { Head } from '@inertiajs/vue3'
-import { router } from '@inertiajs/vue3'
+import { Head, router } from '@inertiajs/vue3'
 
 export default {
     components: {
