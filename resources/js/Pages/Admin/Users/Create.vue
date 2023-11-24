@@ -34,7 +34,7 @@
                 <div class="d-flex justify-content-end">
                     <Link :href="route('users.index')" type="button" class="btn btn-sm btn-outline-secondary me-2 rounded-3">{{ $t('Back') }}</Link>
                     <button type="submit" :class="{ 'btn d-none': form.processing }" class="btn btn-sm btn-outline-secondary rounded-3">{{ $t('Save') }}</button>
-                    <button v-if="form.processing" class="btn btn-sm btn-outline-secondary rounded-3" type="button" disabled>
+                    <button v-if="form.processing" class="btn btn-sm btn-outline-secondary rounded-3" type="button" style="height: 28px;" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         <span class="visually-hidden">Loading...</span>
                     </button>
