@@ -1,5 +1,5 @@
 <template>
-    <nav v-if="links.length > 3" aria-label="Page navigation">
+    <nav v-if="links.length > 3">
         <ul class="pagination pagination-sm justify-content-end mb-0">
             <li v-for="link in links" class="page-item" :class="{'active': link.active, 'disabled': link.url === null}">
                 <Link v-html="link.label" 
