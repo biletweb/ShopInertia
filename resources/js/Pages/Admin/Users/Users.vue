@@ -33,18 +33,17 @@
                     <td>{{ user.formatted_created_at }}</td>
                     <td>
                         <div class="d-flex">
-                            <Link :href="route('users.edit', user.id)" role="button" class="btn btn-xs btn-outline-success rounded-3 me-2 text-success"><i class='bx bx-edit-alt'></i></Link>
-                            <a @click="destroy(user.id)" role="button" class="btn btn-xs btn-outline-danger rounded-3 text-danger"><i class='bx bx-trash-alt'></i></a>
+                            <Link :href="route('users.edit', user.id)" class="btn btn-xs btn-outline-success rounded-3 me-2 text-success"><i class='bx bx-edit-alt'></i></Link>
+                            <a @click="destroy(user.id)" class="btn btn-xs btn-outline-danger rounded-3 text-danger"><i class='bx bx-trash-alt'></i></a>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <div v-else class="alert alert-secondary rounded-3 text-center fw-bold" role="alert">
-        No users
+    <div v-else class="alert alert-secondary rounded-3 text-center fw-bold mt-3" role="alert">
+        {{ $t('No users') }}
     </div>
-
     <Pagination :links="users.links" />
 </template>
 
@@ -57,10 +56,12 @@ export default {
     components: {
         Head, Pagination, Link
     },
+
     props: {
         title: String,
         users: Object
     },
+
     methods: {
         destroy(id) {
             if (confirm('Are you sure you want to delete this user?')) {
@@ -68,6 +69,7 @@ export default {
             }
         },
     },
+
     setup() {
         const form = useForm({
             search: '',
@@ -79,6 +81,7 @@ export default {
 
         return { form, search }
     },
+    
     layout: MainLayout
 }
 </script>
