@@ -53,9 +53,11 @@ export default {
     components: {
         Head, Pagination, Link
     },
+
     props: {
         title: String,
     },
+
     setup() {
         const form = useForm({
             name: null,
@@ -70,6 +72,7 @@ export default {
 
         return { form, store }
     },
+    
     layout: MainLayout
 }
 </script>
