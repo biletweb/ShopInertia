@@ -22,6 +22,6 @@ class SearchController extends Controller
 
         $users = User::where('email', '=', $request->search)->paginate(1);
 
-        return inertia('Admin/Users/Users', compact('title', 'users'));
+        return inertia('Admin/Users/Index', compact('title', 'users'));
     }
 }

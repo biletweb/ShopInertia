@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\SearchController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Shop\ShopController;
@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/', [IndexController::class, 'index'])->name('admin.index');
     Route::resource('users', UserController::class);
 
     Route::controller(SearchController::class)->group(function () {

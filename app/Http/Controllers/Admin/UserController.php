@@ -19,7 +19,7 @@ class UserController extends Controller
         $users = User::orderByDesc('created_at')->paginate(10);
 
         // Возвращаем представление Inertia.js с передачей данных о заголовке и пользователях.
-        return inertia('Admin/Users/Users', compact('title', 'users'));
+        return inertia('Admin/Users/Index', compact('title', 'users'));
     }
 
     public function create()
