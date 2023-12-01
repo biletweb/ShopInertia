@@ -40,5 +40,6 @@
     "The email field is required.": "Поле email є обов’язковим для заповнення.",
     "The password field must be at least 4 characters.": "Поле пароля має містити не менше 4 символів.",
     "The email field must be a valid email address.": "Поле email має бути дійсною електронною адресою.",
-    "Are you sure you want to delete this user?": "Ви впевнені, що хочете видалити цього користувача?"
+    "Are you sure you want to delete this user?": "Ви впевнені, що хочете видалити цього користувача?",
+    "The current password is incorrect.": "Поточний пароль неправильний."
 }
