@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-secondary rounded-top mt-3">
+    <footer class="bg-secondary rounded mb-2 mt-3">
         <div class="container d-flex justify-content-between py-3">
             <div>
                 <span class="fw-bold link-light">{{ $page.props.appName }}</span> <span class="link-light">© {{ currentYear }}</span>

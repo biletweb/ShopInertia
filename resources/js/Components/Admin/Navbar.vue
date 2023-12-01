@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-md bg-secondary rounded-bottom mb-3">
+    <nav class="navbar navbar-expand-md bg-secondary rounded mt-2 mb-3">
         <div class="container">
             <Link class="navbar-brand" :href="route('admin.index')">{{ $t('ADMIN PANEL') }}</Link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-ex-7">
