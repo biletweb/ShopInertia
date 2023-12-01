@@ -28,5 +28,6 @@ export default {
 <style scoped>
 .page-item.active .page-link {
     background-color: #8592A3;
+    box-shadow: 0 0 0.1rem #8592A3;
 }
 </style>
